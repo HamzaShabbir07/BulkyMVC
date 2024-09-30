@@ -1,1 +1,29 @@
-﻿<h1> Caterogy List </h1>
+﻿@model List<Catergory>
+
+<h1> Caterogy List </h1>
+<table class="table table-border table-striped">
+   <thead>
+    <tr>
+        <th>
+            Catergory 
+        </th>
+        <th>
+            Display Order
+        </th>
+    </tr>
+</thead>
+<tbody>
+        @foreach(var obj in Model)
+        {
+            
+        <tr>
+        <td>
+            Name
+        </td>
+        <td>
+            Display Order
+        </td>
+    </tr>
+        }
+</tbody>
+</table>
