@@ -1,7 +1,18 @@
 ﻿@model List<Catergory>
 
-<h1> Caterogy List </h1>
-<table class="table table-border table-striped">
+    <div class="container">
+        <div class="row pt-5 pb-3">
+            <div class="col-6">
+                <h2> Caterogy List </h2>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-controller="Catergory" asp-action="Create" class="btn btn-primary rounded"> <i class="bi bi-plus"></i> Create a List</a>
+
+            </div>
+
+        </div>
+
+<table class="table table-border table-striped shadow rounded">
    <thead>
     <tr>
         <th>
@@ -13,17 +24,14 @@
     </tr>
 </thead>
 <tbody>
-        @foreach(var obj in Model)
+        @foreach (var obj in Model.OrderBy(u => u.Display_Order))
         {
-            
         <tr>
-        <td>
-            Name
-        </td>
-        <td>
-            Display Order
-        </td>
-    </tr>
+            <td>@obj.Name</td>
+            <td>@obj.Display_Order</td>
+        </tr>
         }
+
 </tbody>
 </table>
+</div>
