@@ -21,6 +21,9 @@
         <th>
             Display Order
         </th>
+        <th>
+        Actions
+        </th>
     </tr>
 </thead>
 <tbody>
@@ -29,6 +32,18 @@
         <tr>
             <td>@obj.Name</td>
             <td>@obj.Display_Order</td>
+            <td>
+                <div class="w-50 btn-group rounded gap-5" role="group">
+                      <a asp-controller="Catergory" asp-action="Edit" class="btn btn-primary rounded ">
+                                <i class="bi bi-pencil-square"></i>
+                            Edit </a>
+                      <a asp-controller="Catergory" asp-action="Delete" class="btn btn-danger rounded ">
+                                <i class="bi bi-trash3"></i>
+                          Delete
+                      </a>
+                </div>
+
+            </td>
         </tr>
         }
 
