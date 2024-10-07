@@ -1,0 +1,53 @@
+﻿@page
+@model ProductManagement.Pages.Catergories.IndexModel
+
+    <div class="container">
+        <div class="row pt-5 pb-3">
+            <div class="col-6">
+                <h2> Caterogy List </h2>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-page="Catergories/create" class="btn btn-primary rounded"> <i class="bi bi-plus"></i> Create a List</a>
+
+            </div>
+
+        </div>
+
+<table class="table table-border table-striped shadow rounded">
+   <thead>
+    <tr>
+        <th>
+            Catergory 
+        </th>
+        <th>
+            Display Order
+        </th>
+        <th>
+        Actions
+        </th>
+    </tr>
+</thead>
+<tbody>
+        @foreach (var obj in Model.CategoryList.OrderBy(u => u.Display_Order))
+        {
+        <tr>
+            <td>@obj.Name</td>
+            <td>@obj.Display_Order</td>
+            <td>
+                <div class="w-50 btn-group rounded gap-5" role="group">
+                            <a asp-page="Catergories/edit" asp-route-id="@obj.ID" class="btn btn-primary rounded ">
+                                <i class="bi bi-pencil-square"></i>
+                            Edit </a>
+                            <a asp-page="Catergories/delete" asp-route-id="@obj.ID" class="btn btn-danger rounded ">
+                                <i class="bi bi-trash3"></i>
+                          Delete
+                      </a>
+                </div>
+
+            </td>
+        </tr>
+        }
+
+</tbody>
+</table>
+</div>
