@@ -1,0 +1,28 @@
+﻿@page
+@model ProductManagement.Pages.Catergories.DeleteModel
+
+<form method="post">
+    <div class="border p-4 mt-5 shadow rounded">
+        <div class="row mt-2">
+            <h2> Delete Catergory </h2>
+            <hr />
+        </div>
+        @* <div asp-validation-summary="ModelOnly"></div> *@
+        <div class=" row p-1 mb-3">
+            <label asp-for="Catergory.Name" class="mb-2 p-0"> </label>
+            <input asp-for="Catergory.Name" disabled class="form-control rounded" />
+            
+
+        </div>
+
+        <div class="row p-1 mb-3">
+            <label class="mb-2 p-0" asp-for="Catergory.Display_Order"> </label>
+            <input asp-for="Catergory.Display_Order" disabled class="form-control rounded" />
+           
+
+        </div>
+        <button type="submit" class="btn btn-danger rounded"> Delete </button>
+        <a class="btn btn-secondary" asp-page="/Catergory/delete"> <i class="bi bi-arrow-left-circle"></i> Back to List</a>
+
+    </div>
+</form>

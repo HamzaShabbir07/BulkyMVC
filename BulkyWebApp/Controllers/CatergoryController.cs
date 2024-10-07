@@ -8,6 +8,7 @@ namespace BulkyWebApp.Controllers
     public class CatergoryController : Controller
     {
         private readonly ApplicationDbContext _db;
+
         public CatergoryController(ApplicationDbContext db)
         {
             _db = db;

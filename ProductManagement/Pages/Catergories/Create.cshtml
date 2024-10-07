@@ -1,0 +1,35 @@
+﻿@page
+@model ProductManagement.Pages.Catergories.CreateModel
+
+<form method="post">
+    <div class="border p-4 mt-5 shadow rounded">
+        <div class="row mt-2">
+            <h2> Create Catergory </h2>
+            <hr />
+        </div>
+         @* <div asp-validation-summary="ModelOnly"></div> *@
+        <div class=" row p-1 mb-3">
+            <label asp-for="Category.Name" class="mb-2 p-0"> </label>
+            <input asp-for="Category.Name" class="form-control rounded" />
+            <span asp-validation-for="Category.Name" class="text-danger"> </span>
+
+        </div>
+
+        <div class="row p-1 mb-3">
+            <label class="mb-2 p-0" asp-for="Category.Display_Order"> </label>
+            <input asp-for="Category.Display_Order" class="form-control rounded" />
+            <span asp-validation-for="Category.Display_Order" class="text-danger"> </span>
+
+        </div>
+        <button type="submit" class="btn btn-primary rounded"> Submit </button>
+        <a class="btn btn-secondary" asp-page="/Catergories/index"> <i class="bi bi-arrow-left-circle"></i> Back to List</a>
+        
+    </div>
+</form>
+
+@section Scripts{
+    @{
+
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
