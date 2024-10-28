@@ -24,6 +24,7 @@ namespace ProductManagement.Pages.Catergories
         {
             _context.Categories.Add(Category);
             _context.SaveChanges();
+            TempData["Success"] = "Created Sucessfully";
             return RedirectToPage("Index");
         }
     }

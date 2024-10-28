@@ -46,7 +46,7 @@ namespace ProductManagement.Pages.Catergories
 
                 _context.Categories.Update(Catergory);
                 _context.SaveChanges();
-
+                TempData["success"] = "Edit Successfully";
                 return RedirectToPage("Index");
             }
 
